@@ -38,6 +38,7 @@ while True:
         compass_raw = sh.get_compass_raw()
         gyro = sh.get_gyroscope()
         gyro_raw = sh.get_gyroscope_raw()
+        accelerometer_raw = sh.get_accelerometer_raw()
         camera.capture(debug_capture=True)
 
 
@@ -61,6 +62,9 @@ while True:
             gyro_raw['x'],
             gyro_raw['y'],
             gyro_raw['z'],
+            accelerometer_raw['x'],
+            accelerometer_raw['y'],
+            accelerometer_raw['z'],
         ))
     except Exception as e:
         logger.error('{}: {})'.format(e.__class__.__name__, e))
